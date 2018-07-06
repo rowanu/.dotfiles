@@ -32,8 +32,6 @@ if command -v aws > /dev/null; then
 fi
 
 # Machine-specific setup below
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 # export PYTHONPATH=`brew --prefix`/lib/python2.7/site-packages:$PYTHONPATH
 
