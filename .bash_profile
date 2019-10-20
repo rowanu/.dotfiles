@@ -40,4 +40,8 @@ fi
 export GOPATH=$(go env GOPATH)
 export PATH=node_modules/.bin:$GOPATH/bin:$PATH:$HOME/bin
 
-# Don't commit below this line
+#  Don't commit below this line
+eval "$(pyenv init -)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
