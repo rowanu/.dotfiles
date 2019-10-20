@@ -4,7 +4,6 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'homebrew/devel-only'
 tap 'versent/taps'
 
 brew 'docker'
