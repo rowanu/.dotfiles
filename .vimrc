@@ -61,11 +61,13 @@ endif
 call plug#begin('~/.vim/plugged')
 " Calls indent on and syntax enable
 Plug 'alvan/vim-closetag'
+Plug 'davidhalter/jedi-vim'
 Plug 'Konfekt/FastFold'
 Plug 'maralla/completor.vim', {'do': 'cd pythonx/completers/javascript && npm install'}
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
+Plug 'jparise/vim-graphql'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'posva/vim-vue'
@@ -73,10 +75,9 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jparise/vim-graphql'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
 " ## Filetype Configurations
@@ -142,6 +143,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_fixers = {
       \   'javascript': ['prettier'],
       \   'css': ['prettier'],
+      \   'python': ['black'],
       \}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
@@ -153,6 +155,8 @@ let g:go_highlight_types=1
 let g:go_highlight_operators=1
 let g:go_highlight_build_constraints=1
 let g:go_fmt_command='goimports' " Auto-add imports
+" Python
+let g:jedi#use_splits_not_buffers = "left"
 " Completor
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
