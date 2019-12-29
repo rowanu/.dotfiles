@@ -83,7 +83,7 @@ call plug#end()
 " ## Filetype Configurations
 autocmd BufNewFile,BufRead *.md,*.markdown setlocal spell
 autocmd BufNewFile,BufRead *.md,*.markdown setlocal textwidth=0 wrapmargin=0
-autocmd BufNewFile,BufRead *.template setlocal filetype=yaml
+autocmd BufNewFile,BufRead *.template setlocal filetype=cloudformation foldmethod=indent syntax=yaml commentstring=#\ %s
 autocmd BufNewFile,BufRead *.svelte setlocal filetype=html
 autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal foldmethod=syntax shiftwidth=2 tabstop=2
@@ -134,19 +134,25 @@ let g:ctrlp_max_files=1000 " Limit number of files scanned
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
 let g:airline_solarized_normal_green=1
-" Ale
+" ### Ale
 let g:ale_sign_error='✗'
 let g:ale_sign_warning='⚠'
 let g:ale_lint_delay=1000
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let b:ale_linter_aliases = ['cloudformation', 'yaml']
 let g:ale_fixers = {
+      \   'vue': ['prettier'],
       \   'javascript': ['prettier'],
       \   'css': ['prettier'],
       \   'python': ['black'],
       \}
-let g:ale_lint_on_save = 1
+" Only run on save
+let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
 " Golang
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
