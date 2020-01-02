@@ -1,2 +1,4 @@
 --recurse
---python-kinds=-i
+--python-kinds=-iv
+--exclude=.git
+--exclude=node_modules

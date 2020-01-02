@@ -62,6 +62,7 @@ call plug#begin('~/.vim/plugged')
 " Calls indent on and syntax enable
 Plug 'alvan/vim-closetag'
 Plug 'davidhalter/jedi-vim'
+Plug 'craigemery/vim-autotag'
 Plug 'Konfekt/FastFold'
 Plug 'maralla/completor.vim', {'do': 'cd pythonx/completers/javascript && npm install'}
 Plug 'airblade/vim-gitgutter'
