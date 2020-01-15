@@ -141,15 +141,15 @@ let g:ale_sign_warning='⚠'
 let g:ale_lint_delay=1000
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let b:ale_linter_aliases = ['cloudformation', 'yaml']
+" FIXME: This breaks ALE, makes everything 'cloudformation'
+" let b:ale_linter_aliases = ['cloudformation', 'yaml']
 let g:ale_fixers = {
       \   'vue': ['prettier'],
       \   'javascript': ['prettier'],
       \   'css': ['prettier'],
       \   'python': ['black'],
       \}
-" Only run on save
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'never' " Only run on save
 " let g:ale_lint_on_insert_leave = 0
 " let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
