@@ -12,6 +12,7 @@ brew 'exiftool'
 brew 'gdrive'
 brew 'git'
 brew 'gnu-sed', args: ['with-default-names']
+brew 'github/gh/gh'
 brew 'go'
 brew 'hugo'
 brew 'jq'
