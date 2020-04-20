@@ -1,10 +1,9 @@
 tap "aws/tap"
-tap "caskroom/cask"
-tap "caskroom/fonts"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "versent/taps"
 # Automatic configure script builder
@@ -39,8 +38,6 @@ brew "lua"
 brew "nvm"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
-# Python dependency management tool
-brew "pipenv", link: false
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
