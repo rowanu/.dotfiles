@@ -74,6 +74,7 @@ Plug 'mileszs/ack.vim'
 Plug 'posva/vim-vue'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
+Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -144,16 +145,17 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " FIXME: This breaks ALE, makes everything 'cloudformation'
 " let b:ale_linter_aliases = ['cloudformation', 'yaml']
 let g:ale_fixers = {
-      \   'vue': ['prettier'],
-      \   'javascript': ['prettier'],
       \   'css': ['prettier'],
+      \   'javascript': ['prettier'],
       \   'python': ['black'],
+      \   'vue': ['prettier'],
       \}
 let g:ale_lint_on_text_changed = 'never' " Only run on save
 " let g:ale_lint_on_insert_leave = 0
 " let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
+" let g:ale_pattern_options = {'pcpt': {'ale_fixers': []}}
 " Golang
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
