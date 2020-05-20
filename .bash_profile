@@ -39,3 +39,4 @@ fi
 
 export GOPATH=$(go env GOPATH)
 export PATH=node_modules/.bin:$GOPATH/bin:$PATH:$HOME/bin
+export AWS_PAGER=""

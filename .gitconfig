@@ -1,6 +1,6 @@
 [user]
 	name = rowan
-	email = rowanu@gmail.com
+	email = 
 [alias]
   hist = log --pretty=format:\"%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset\" --graph --date=short
 [color]
