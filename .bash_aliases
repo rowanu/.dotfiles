@@ -15,11 +15,6 @@ function tm() {
 }
 alias simplehttpserver='python -m SimpleHTTPServer'
 
-# Opens files matching an ag query in vim tabs
-function vag() {
-  vim -p `ag -l $@`
-}
-
 # SSH
 # SOCKS proxy
 # alias proxy='ssh -f -N -D 9999 rowan@hostname'

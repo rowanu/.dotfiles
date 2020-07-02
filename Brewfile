@@ -24,6 +24,7 @@ brew "ctags"
 brew "docker"
 # Run arbitrary commands when files change
 brew "entr"
+brew "fzf"
 # Distributed revision control system
 brew "git"
 # GNU Pretty Good Privacy (PGP) package
@@ -38,14 +39,13 @@ brew "lua"
 brew "nvm"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+brew "ripgrep"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
-# Code-search similar to ack
-brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
 # Vi 'workalike' with many additional features
