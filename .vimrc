@@ -4,6 +4,7 @@ let mapleader="\<Space>"
 
 set backspace=indent,eol,start
 set bg=dark
+set colorcolumn=81
 set errorbells
 set expandtab
 set foldlevelstart=1
@@ -50,10 +51,17 @@ call plug#begin('~/.vim/plugged')
 " Plugin 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 call plug#end()
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 let g:ale_fix_on_save=1
 let g:ale_lint_delay=1000
