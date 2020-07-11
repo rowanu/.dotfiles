@@ -13,7 +13,9 @@ function tm() {
     tmux new -s ${1}
   fi
 }
-alias simplehttpserver='python -m SimpleHTTPServer'
+alias simplehttpserver='python3 -m http.server'
+
+
 
 # SSH
 # SOCKS proxy
