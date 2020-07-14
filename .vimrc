@@ -28,6 +28,12 @@ syntax on
 
 cnoremap jk <Esc>
 inoremap jk <C-[>
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 map <Leader>t :tabnew<CR>
 map <Leader>tc :tabclose<CR>
 map <Leader>te :tabedit
@@ -57,13 +63,12 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 call plug#end()
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 let g:ale_fix_on_save=1
 let g:ale_lint_delay=1000
 let g:ale_sign_error='✗'
 let g:ale_sign_warning='⚠'
+
+function! s:check_back_space() abort " Used by coc-vim
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
