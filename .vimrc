@@ -54,7 +54,7 @@ nnoremap <Leader>l :BLines<CR>
 match ErrorMsg '\s\+$'
 
 call plug#begin('~/.vim/plugged')
-" Plugin 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
