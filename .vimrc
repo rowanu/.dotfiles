@@ -34,22 +34,22 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <silent><expr> <c-space> coc#refresh()
-map <Leader>t :tabnew<CR>
-map <Leader>tc :tabclose<CR>
-map <Leader>te :tabedit
-map <Leader>tn :tabnext<CR>
-map <Leader>tp :tabprevious<CR>
-nmap <Leader>sh :leftabove  vnew<CR>
-nmap <Leader>sj :rightbelow new<CR>
-nmap <Leader>sk :leftabove  new<CR>
-nmap <Leader>sl :rightbelow vnew<CR>
-nmap <Leader>w :w!<CR>
-nmap <Space> <Space>:noh<CR>
 nnoremap <C-I> :Rg 
 nnoremap <C-P> :Files<CR>
 nnoremap <F3> :set list!<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :BLines<CR>
+nnoremap <Leader>sh :leftabove  vnew<CR>
+nnoremap <Leader>sj :rightbelow new<CR>
+nnoremap <Leader>sk :leftabove  new<CR>
+nnoremap <Leader>sl :rightbelow vnew<CR>
+nnoremap <Leader>w :w!<CR>
+nnoremap <Space> <Space>:noh<CR>
+noremap <Leader>t :tabnew<CR>
+noremap <Leader>tc :tabclose<CR>
+noremap <Leader>te :tabedit
+noremap <Leader>tn :tabnext<CR>
+noremap <Leader>tp :tabprevious<CR>
 
 match ErrorMsg '\s\+$'
 
