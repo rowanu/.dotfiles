@@ -18,6 +18,7 @@ set showcmd
 set smartcase
 set t_Co=256
 set tabstop=2
+set termguicolors
 set visualbell
 set wrap
 syntax on
