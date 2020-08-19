@@ -1,3 +1,5 @@
+let mapleader="\<Space>"
+
 set background=dark
 set backspace=indent,eol,start
 set colorcolumn=81
@@ -52,6 +54,7 @@ match ErrorMsg '\s\+$'
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'habamax/vim-asciidoctor'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
@@ -61,7 +64,6 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 call plug#end()
 
-let mapleader="\<Space>"
 let g:ale_fix_on_save=1
 let g:ale_lint_delay=1000
 let g:ale_sign_error='✗'
