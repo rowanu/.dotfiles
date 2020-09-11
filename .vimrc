@@ -18,6 +18,7 @@ set scrolloff=5
 set shiftwidth=2
 set showcmd
 set smartcase
+set statusline=%f%m\ %y%=%v:%l/%L\ %P
 set t_Co=256
 set tabstop=2
 set termguicolors
