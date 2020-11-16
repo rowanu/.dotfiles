@@ -2,31 +2,25 @@ tap "aws/tap"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "versent/taps"
-# Automatic configure script builder
-brew "autoconf"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
+brew "asciidoctor"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Python code formatter
-brew "black"
 # Validate CloudFormation templates against the CloudFormation spec
 brew "cfn-lint"
 # Reimplementation of ctags(1)
 brew "ctags"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
-# Run arbitrary commands when files change
-brew "entr"
 brew "fzf"
 # Distributed revision control system
 brew "git"
+brew "gh"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
@@ -37,8 +31,6 @@ brew "jq"
 brew "lua"
 # Manage multiple Node.js versions
 brew "nvm"
-# 7-Zip (high compression file archiver) implementation
-brew "p7zip"
 brew "ripgrep"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
@@ -52,30 +44,29 @@ brew "tmux"
 brew "vim"
 # Internet file retriever
 brew "wget"
+brew "write-good"
 # Linter for YAML files
 brew "yamllint"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
-# Process YAML documents from the CLI
-brew "yq"
-# AWS SAM CLI 🐿 is a tool for local development and testing of Serverless applications
-brew "aws/tap/aws-sam-cli"
-# GitHub CLI
-brew "github/gh/gh"
 brew "versent/taps/saml2aws"
+cask "1password"
 cask "adobe-acrobat-reader"
-cask "amazon-chime"
+# cask "amazon-chime"
+cask "brave-browser"
 cask "docker"
 cask "drawio"
-cask "google-chrome"
+cask "dropbox"
+cask "flux"
+cask "font-source-sans-pro"
 cask "iterm2"
 cask "kindle"
-cask "microsoft-office"
-cask "microsoft-teams"
-cask "nosql-workbench-for-amazon-dynamodb"
+# cask "microsoft-office"
+# cask "microsoft-teams"
+# cask "nosql-workbench-for-amazon-dynamodb"
 cask "slack"
 cask "spectacle"
 cask "spotify"
 cask "viscosity"
 cask "vlc"
-cask "zoomus"
+# cask "zoomus"
