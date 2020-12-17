@@ -55,6 +55,7 @@ match ErrorMsg '\s\+$'
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'evanleck/vim-svelte'
 Plug 'habamax/vim-asciidoctor'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
