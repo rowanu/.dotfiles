@@ -12,6 +12,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
+set linebreak
 set number
 set ruler
 set scrolloff=5
@@ -45,6 +46,8 @@ nnoremap <Leader>sk :leftabove  new<CR>
 nnoremap <Leader>sl :rightbelow vnew<CR>
 nnoremap <Leader>w :w!<CR>
 nnoremap <Space> <Space>:noh<CR>
+nnoremap j gj
+nnoremap k gk
 noremap <Leader>t :tabnew<CR>
 noremap <Leader>tc :tabclose<CR>
 noremap <Leader>te :tabedit

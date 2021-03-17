@@ -1,6 +1,8 @@
 # General
 export EDITOR=vim
 set -o vi
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Search history
 function hgrep() { history|`which grep` $@|grep -v hgrep; }
@@ -26,6 +28,7 @@ if [ -f ~/.git-copmletion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+export AWS_PAGER=""
 function awsprofile() { export AWS_DEFAULT_PROFILE=$@; export AWS_PROFILE=$@; }
 if command -v aws > /dev/null; then
   complete -C `which aws_completer` aws
