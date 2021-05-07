@@ -34,8 +34,9 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-l> coc#refresh()
 nnoremap <C-I> :Rg 
+" nnoremap <C-P> :GFiles --exclude-standard --others --cached<CR>
 nnoremap <C-P> :Files<CR>
 nnoremap <F3> :set list!<CR>
 nnoremap <Leader>b :Buffers<CR>
@@ -60,9 +61,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'evanleck/vim-svelte'
 Plug 'habamax/vim-asciidoctor'
+Plug 'jacoborus/tender.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-commentary'
@@ -80,4 +81,4 @@ function! s:check_back_space() abort " Used by coc-vim
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-colorscheme gruvbox
+colorscheme tender
