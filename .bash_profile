@@ -41,6 +41,6 @@ fi
 # eval "$(rbenv init -)"
 
 export GOPATH=$(go env GOPATH)
-export PATH=node_modules/.bin:$GOPATH/bin:$PATH:$HOME/bin
 export AWS_PAGER=""
+export PATH=node_modules/.bin:~/.rbenv/shims:$GOPATH/bin:$PATH:$HOME/bin
 export BASH_SILENCE_DEPRECATION_WARNING=1
