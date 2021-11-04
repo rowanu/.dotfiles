@@ -29,12 +29,6 @@ syntax on
 
 cnoremap jk <Esc>
 inoremap jk <C-[>
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <silent><expr> <c-l> coc#refresh()
 nnoremap <C-I> :Rg 
 " nnoremap <C-P> :GFiles --exclude-standard --others --cached<CR>
 nnoremap <C-P> :Files<CR>
@@ -59,17 +53,16 @@ match ErrorMsg '\s\+$'
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
 Plug 'evanleck/vim-svelte'
 Plug 'habamax/vim-asciidoctor'
 Plug 'jacoborus/tender.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 let g:ale_fix_on_save=1
