@@ -1,0 +1,47 @@
+[user]
+	name =
+	email =
+	signingkey =
+
+# Machine-local identity and per-project overrides (gitignored, not tracked)
+[include]
+	path = ~/.gitconfig.local
+
+[alias]
+	hist = log --pretty=format:\"%C(yellow)%h%Cblue%d%Creset %s %C(green) %an, %ar%Creset\" --graph --date=short
+	a = add
+	b = branch
+	co = checkout
+	cob = checkout -b
+	ca = commit -a -m
+	amend = commit --amend
+	cm = commit -m
+	d = diff
+	dc = diff --cached
+	dw = diff --ignore-space-change
+	f = fetch
+	l = hist
+	st = status
+	ss = stash
+	undo = reset --soft HEAD~1
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+
+[push]
+	default = simple
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+
+[init]
+	defaultBranch = main
+
+[gpg]
+	format = ssh
+[core]
+	excludesfile = ~/.gitignore

@@ -1,0 +1,7 @@
+.config/zsh/local.zsh
+.DS_Store
+repomix-output.txt
+.repomixignore
+.claude/
+**/.vscode/*
+**/dist/*
