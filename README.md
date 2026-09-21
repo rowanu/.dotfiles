@@ -49,7 +49,7 @@ A simplified, modular ZSH configuration focused on essential development tools.
 6. **Install Node.js and Python versions:**
    ```bash
    # Install latest LTS Node.js
-   volta install node@lts
+   fnm install --lts
    
    # Install Python (adjust version as needed)
    pyenv install 3.11.0
@@ -71,17 +71,28 @@ awsinfo
 ```
 
 ### Essential Git Aliases
-- `ga` - git add
-- `gb` - git branch  
-- `gc` - git checkout
-- `gcb` - git checkout -b
-- `gcmm` - git commit -m
-- `gd` - git diff
-- `gl` - git hist (pretty log)
-- `gp` - git push
-- `gpu` - git pull
-- `gs` - git status
-- `gundo` - undo last commit (keeps changes)
+
+Git aliases are defined in `.gitconfig` rather than as shell aliases, so they work
+from any shell and from tools that shell out to git. The only shell alias is `g='git'`,
+which makes them short to type (`g st`, `g cm "message"`).
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `a` | `add` | |
+| `b` | `branch` | |
+| `co` | `checkout` | |
+| `cob` | `checkout -b` | |
+| `cm` | `commit -m` | |
+| `ca` | `commit -a -m` | stages tracked files first |
+| `amend` | `commit --amend` | |
+| `d` | `diff` | |
+| `dc` | `diff --cached` | staged changes |
+| `dw` | `diff --ignore-space-change` | |
+| `f` | `fetch` | |
+| `st` | `status` | |
+| `ss` | `stash` | |
+| `hist` / `l` | pretty graph log | `l` is shorthand for `hist` |
+| `undo` | `reset --soft HEAD~1` | undo last commit, keeps changes |
 
 ### Helper Functions
 ```bash
@@ -126,9 +137,9 @@ git config --global user.email "your.email@example.com"
 
 ### New Improvements
 - **Modular configuration** - Easier to maintain and customize
-- **Volta for Node.js** - More reliable than nvm
+- **fnm for Node.js** - Fast, with automatic version switching on `cd`
 - **Simplified AWS management** - Better profile switching
-- **VSCode as default editor** - Matches your current workflow
+- **Neovim as default editor** - Set via `$EDITOR` and `$VISUAL`
 
 ## Troubleshooting
 
@@ -157,7 +168,7 @@ aws configure list
 ```
 
 ### Python/Node Issues
-If pyenv or volta commands aren't found, restart your terminal or manually source your shell config.
+If pyenv or fnm commands aren't found, restart your terminal or manually source your shell config.
 
 ## Adding New Tools
 
@@ -168,13 +179,15 @@ brew bundle
 ```
 
 ### New Aliases/Functions
-Add to appropriate files in `~/.config/zsh/` and restart terminal.
+Add shell aliases and functions to the appropriate files in `~/.config/zsh/` and
+restart your terminal. Git aliases belong in the `[alias]` section of `.gitconfig`.
 
 ### Per-Project Git Config
-The gitconfig includes conditional includes for specific directories. Add new ones as needed:
+`.gitconfig` pulls in `~/.gitconfig.local` (untracked) for machine-local identity.
+For per-directory overrides, add a conditional include there:
 ```gitconfig
 [includeIf "gitdir:~/Code/mycompany/"]
-    path = /path/to/company-specific/.gitconfig
+    path = ~/Code/mycompany/.gitconfig
 ```
 
 ## Backup

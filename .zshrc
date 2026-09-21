@@ -1,11 +1,14 @@
 autoload -Uz compinit && compinit
 setopt auto_cd
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt share_history
-setopt append_history
-HISTSIZE=10000
-SAVEHIST=10000
+setopt hist_ignore_all_dups     # drop older duplicates, keep history clean
+setopt hist_ignore_space        # commands starting with a space aren't recorded
+setopt hist_reduce_blanks       # normalise whitespace before saving
+setopt hist_verify              # expand !! etc. onto the line instead of running blind
+setopt append_history           # append to file, don't overwrite
+setopt inc_append_history       # write each command immediately (crash-safe)
+unsetopt share_history          # bash-like: do NOT import other sessions' commands
+HISTSIZE=50000
+SAVEHIST=50000
 HISTFILE=~/.zsh_history
 bindkey '^R' history-incremental-search-backward
 
