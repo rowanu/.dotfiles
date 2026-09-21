@@ -29,7 +29,7 @@ cask "docker"
 cask "font-source-code-pro"
 
 ## Node.js tooling
-brew "volta"
+brew "fnm"
 
 ## Python tooling  
 brew "pyenv"
