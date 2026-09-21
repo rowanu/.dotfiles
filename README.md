@@ -121,11 +121,16 @@ alias myalias="custom command"
 ```
 
 ### Git Configuration
-Update `.gitconfig` with your details:
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+Identity lives in `~/.gitconfig.local`, which is untracked so it never gets
+committed. Create it with your details:
+```gitconfig
+[user]
+    name = Your Name
+    email = your.email@example.com
+    signingkey = ~/.ssh/id_rsa.pub
 ```
+Avoid `git config --global user.name ...`: `~/.gitconfig` is a symlink into this
+repo, so it would write your identity into a tracked file.
 
 ## Migration from Previous Setup
 
