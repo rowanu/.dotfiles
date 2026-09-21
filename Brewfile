@@ -25,7 +25,7 @@ brew "parliament"
 
 # Development
 cask "visual-studio-code"
-cask "docker"
+cask "docker-desktop"
 cask "font-source-code-pro"
 
 ## Node.js tooling
@@ -45,7 +45,7 @@ cask "spotify"
 cask "amethyst"
 cask "claude"
 cask "dropbox"
-cask "flux"
+cask "flux-app"
 cask "notion"
 cask "steam"
 cask "vlc"
