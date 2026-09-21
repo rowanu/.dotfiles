@@ -1,4 +1,4 @@
-tap "homebrew/bundle"
+tap "common-fate/granted"
 
 # Development tools
 brew "git"
@@ -47,6 +47,7 @@ cask "claude"
 cask "dropbox"
 cask "flux"
 cask "notion"
+cask "steam"
 cask "vlc"
 
 # Work
