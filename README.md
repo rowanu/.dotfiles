@@ -5,7 +5,7 @@ A simplified, modular ZSH configuration focused on essential development tools.
 ## What's Included
 
 - **ZSH shell configuration** with modular file structure
-- **Git configuration** with essential aliases and pretty log formatting
+- **Git configuration** with grouped aliases, safer defaults, and pretty log formatting
 - **Tmux configuration** with vim-style keybindings
 - **AWS CLI tools** with profile switching and info display
 - **Development tools** for Node.js and Python
@@ -76,23 +76,103 @@ Git aliases are defined in `.gitconfig` rather than as shell aliases, so they wo
 from any shell and from tools that shell out to git. The only shell alias is `g='git'`,
 which makes them short to type (`g st`, `g cm "message"`).
 
+**Staging and committing**
+
 | Alias | Command | Notes |
 | --- | --- | --- |
 | `a` | `add` | |
-| `b` | `branch` | |
-| `co` | `checkout` | |
-| `cob` | `checkout -b` | |
+| `ap` | `add -p` | stage interactively, hunk by hunk |
 | `cm` | `commit -m` | |
 | `ca` | `commit -a -m` | stages tracked files first |
+| `wip` | `commit -am "wip"` | quick checkpoint commit |
 | `amend` | `commit --amend` | |
+| `cane` | `commit --amend --no-edit` | amend, keeping the message |
+| `fixup` | `commit --fixup` | takes a commit ref; auto-squashes on rebase |
+| `undo` | `reset --soft HEAD~1` | undo last commit, keeps changes |
+| `unstage` | `restore --staged` | unstage a path, keeps changes |
+| `discard` | `restore` | throw away unstaged changes to a path |
+
+**Branches**
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `b` | `branch` | |
+| `ba` | `branch -a` | includes remotes |
+| `bd` | `branch -d` | delete if merged |
+| `bdd` | `branch -D` | force delete |
+| `co` | `checkout` | |
+| `cob` | `checkout -b` | |
+| `sw` | `switch` | modern `checkout` for branches |
+| `swc` | `switch -c` | modern `checkout -b` |
+| `recent` | `branch --sort=-committerdate` | branches newest first, with relative dates |
+
+**Rebasing and cherry-picking**
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `ri` | `rebase -i` | |
+| `rc` | `rebase --continue` | |
+| `ra` | `rebase --abort` | |
+| `cp` | `cherry-pick` | |
+
+**Syncing**
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `f` | `fetch` | |
+| `p` | `push` | |
+| `pf` | `push --force-with-lease` | refuses to clobber commits you haven't fetched |
+| `pl` | `pull` | rebases, per `[pull] rebase = true` |
+
+**Stashing**
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `ss` | `stash` | |
+| `sa` | `stash apply` | keeps the stash entry |
+| `sl` | `stash list` | |
+| `sp` | `stash pop` | applies and drops the entry |
+
+**Inspecting**
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `st` | `status` | |
 | `d` | `diff` | |
 | `dc` | `diff --cached` | staged changes |
+| `ds` | `diff --stat` | summary of what changed |
 | `dw` | `diff --ignore-space-change` | |
-| `f` | `fetch` | |
-| `st` | `status` | |
-| `ss` | `stash` | |
+| `conflicts` | `diff --name-only --diff-filter=U` | files still conflicted |
 | `hist` / `l` | pretty graph log | `l` is shorthand for `hist` |
-| `undo` | `reset --soft HEAD~1` | undo last commit, keeps changes |
+| `last` | `log -1 --stat` | the most recent commit |
+| `pick` | `log --all --source -S` | pickaxe: `g pick 'someString'` finds commits touching it |
+| `bl` | `blame -w -CCC` | ignores whitespace, follows moved code |
+| `who` | `shortlog -sn --no-merges` | commit counts per author |
+
+**Meta**
+
+| Alias | Command | Notes |
+| --- | --- | --- |
+| `aliases` | `config --get-regexp ^alias\.` | list every alias |
+| `root` | `rev-parse --show-toplevel` | path to the repo root |
+
+Alias names are case-insensitive to Git, so `bd` and `bD` would be the same
+alias. Hence `bdd` for the force delete.
+
+### Git Behaviour Defaults
+
+`.gitconfig` also sets a few non-default behaviours worth knowing about:
+
+| Setting | Effect |
+| --- | --- |
+| `push.autoSetupRemote` | first `git push` on a new branch sets upstream automatically |
+| `pull.rebase` | `git pull` rebases instead of creating a merge commit |
+| `rebase.autosquash` | `fixup!` commits are squashed automatically during `rebase -i` |
+| `rebase.autostash` | uncommitted changes are stashed and restored around a rebase |
+| `rerere.enabled` | conflict resolutions are remembered and replayed on later rebases |
+| `merge.conflictstyle = zdiff3` | conflict markers include the common ancestor |
+| `diff.algorithm = histogram` | clearer diffs than the default Myers algorithm |
+| `diff.colorMoved = zebra` | moved lines are coloured differently from added/removed |
 
 ### Helper Functions
 ```bash
