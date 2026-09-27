@@ -56,6 +56,7 @@ cask "vlc"
 
 # Work
 cask "claude"
+cask "claude-code"
 cask "drawio"
 cask "dynobase"
 cask "iterm2"
@@ -65,4 +66,6 @@ cask "zoom"
 
 # Messaging
 cask "signal"
-cask "whatsapp"
+
+# Networking
+brew "nextdns"
