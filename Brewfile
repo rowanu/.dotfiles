@@ -1,5 +1,3 @@
-tap "common-fate/granted"
-
 # Search and file tools
 brew "jq"
 brew "ripgrep"
