@@ -70,6 +70,22 @@ awsp
 awsinfo
 ```
 
+#### Populating Profiles from IAM Identity Center
+
+[`granted`](https://docs.commonfate.io/granted) writes an `~/.aws/config`
+profile for every account and role you can reach via SSO:
+
+```bash
+granted sso populate \
+  --sso-region <sso-region> \
+  --profile-template="<prefix>.{{ .AccountName }}.{{ .RoleName }}" \
+  https://<your-sso-subdomain>.awsapps.com/start
+```
+
+`--sso-region` is where your Identity Center instance lives, not where you
+work. Re-run when your access changes, with `--prune` to drop profiles you've
+lost. The results work with `awsp` and `assume`.
+
 ### Essential Git Aliases
 
 Git aliases are defined in `.gitconfig` rather than as shell aliases, so they work
